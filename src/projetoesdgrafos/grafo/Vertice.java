@@ -3,6 +3,8 @@ package projetoesdgrafos.grafo;
 import br.com.davidbuzatto.jsge.core.engine.EngineFrame;
 import br.com.davidbuzatto.jsge.math.Vector2;
 
+import java.awt.*;
+
 /**
  * Um vértice de um grafo.
  * 
@@ -12,6 +14,7 @@ public class Vertice implements Comparable<Vertice> {
     
     public int id;
     public Vector2 pos;
+    public Color cor = EngineFrame.WHITE;
 
     public Vertice( int id, double x, double y ) {
         this.id = id;
@@ -20,7 +23,7 @@ public class Vertice implements Comparable<Vertice> {
     
     public void draw( EngineFrame e ) {
         
-        e.fillCircle( pos, 30, EngineFrame.WHITE );
+        e.fillCircle( pos, 30, this.cor );
         e.drawCircle( pos, 30, EngineFrame.BLACK );
         
         String label = String.valueOf( id );
